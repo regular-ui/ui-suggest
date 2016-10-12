@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<!-- 该文件由rgui-tools自动生成 -->
+<meta charset="utf-8">
+<title>Regular UI - Suggest</title>
+<meta name="author" content="Rainfore">
+<meta name="keywords" content="Regular,UI,JavaScript,Framework,MVC,MVVM">
+<meta name="description" content="Regular UI">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="icon" href="https://regular-ui.github.io/v0.2/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://regular-ui.github.io/v0.2/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://regular-ui.github.io/v0.2/css/doc.default.min.css">
+<link rel="stylesheet" href="../css/index.css">
+<!--[if lt IE9]>
+<script>
+(function() {
+    if (!
+    /*@cc_on!@*/
+    0) return;
+    var e = 'abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video'.split(', ');
+    var i= e.length;
+    while (i--)
+        document.createElement(e[i]);
+})();
+</script>
+<![endif]-->
+</head>
+<body>
+<div class="g-top">
+    <div class="g-topc">
+        <a class="u-logo" href="./">Regular UI</a>
+    </div>
+</div>
+<div class="g-bd"><div class="g-bdc"><div class="g-mn g-mn-center">
+    <article class="m-article">
+        <h1>自动提示<small> Suggest</small></h1>
+        <h2 id="示例">示例</h2>
+<h3 id="基本形式">基本形式</h3>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h3 id="文本框属性">文本框属性</h3>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">maxlength</span>=<span class="cm-string">&quot;6&quot;</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;输入时会自动提示&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h3 id="只读，禁用，禁用某一项">只读，禁用，禁用某一项</h3>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">readonly</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;只读&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">disabled</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;禁用&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;禁用某一项&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span> <span class="cm-attribute">disabled</span><span class="cm-tagcm-bracketcm-error">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h3 id="开始提示位置">开始提示位置</h3>
+<p>当输入长度>=<code>startAt</code>属性后开始提示。</p>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">startAt</span>=<span class="cm-string">&quot;2&quot;</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;2字符后开始提示&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h3 id="匹配方式">匹配方式</h3>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">matchType</span>=<span class="cm-string">&quot;includes&quot;</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;包括即可（默认）&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">matchType</span>=<span class="cm-string">&quot;startsWith&quot;</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;只匹配开头&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">matchType</span>=<span class="cm-string">&quot;endsWith&quot;</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;只匹配结尾&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h3 id="严格模式">严格模式</h3>
+<p>当为严格模式时，<code>value</code>属性必须为一个选项的值，否则为空。</p>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;非严格模式（默认）&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">suggest</span> <span class="cm-attribute">strict</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;严格模式&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;abandon&quot;</span><span class="cm-tagcm-bracket">&gt;</span>abandon<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;about&quot;</span><span class="cm-tagcm-bracket">&gt;</span>about<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;absent&quot;</span><span class="cm-tagcm-bracket">&gt;</span>absent<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;bread&quot;</span><span class="cm-tagcm-bracket">&gt;</span>bread<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;break&quot;</span><span class="cm-tagcm-bracket">&gt;</span>break<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;brief&quot;</span><span class="cm-tagcm-bracket">&gt;</span>brief<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;calendar&quot;</span><span class="cm-tagcm-bracket">&gt;</span>calendar<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;cancel&quot;</span><span class="cm-tagcm-bracket">&gt;</span>cancel<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">item</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;column&quot;</span><span class="cm-tagcm-bracket">&gt;</span>column<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">item</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">suggest</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+
+        <h2 id="API">API</h2>
+
+<h3 id="Class">Class</h3>
+<h4>Suggest</h4>
+<p>继承自<strong>ListView</strong>。</p>
+<p></p>
+<div id="j-class"></div>
+
+<h3 id="Options">Options</h3>
+<h4>new Suggest()</h4>
+<table>
+    <thead>
+        <tr><th width="24%">参数</th><th width="16%">类型</th><th width="16%">默认值</th><th width="18%">数据流向</th><th width="26%">描述</th></tr>
+    </thead>
+    <tbody>
+        
+            
+            <tr><td class="f-wsn"><code>data</code></td><td class="f-wsn">object</td><td class="f-wsn"></td><td class="f-tac"></td><td>绑定属性</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.value</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td class="f-tac">outside &lt;=&gt; inside</td><td>文本框的值</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.type</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td class="f-tac">outside  =&gt; inside</td><td>文本框的类型</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.size</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td class="f-tac">outside &lt;=&gt; inside</td><td>文本框的尺寸</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.state</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td class="f-tac">outside &lt;=&gt; inside</td><td>文本框的状态</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.tip</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td class="f-tac">outside &lt;=&gt; inside</td><td>小贴示</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.rules</code></td><td class="f-wsn">object[]</td><td class="f-wsn"><code>[]</code></td><td class="f-tac">outside  =&gt; inside</td><td>验证规则集</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.placeholder</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;请输入&#39;</code></td><td class="f-tac">outside  =&gt; inside</td><td>文本框的占位文字</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.maxlength</code></td><td class="f-wsn">number</td><td class="f-wsn"></td><td class="f-tac">outside  =&gt; inside</td><td>文本框的最大长度</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.autofocus</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td class="f-tac">outside  =&gt; inside</td><td>是否自动获得焦点</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.startAt</code></td><td class="f-wsn">number</td><td class="f-wsn"><code>0</code></td><td class="f-tac">outside  =&gt; inside</td><td>开始提示位置。当输入长度&gt;=该值后开始提示</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.matchType</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;includes&#39;</code></td><td class="f-tac">outside  =&gt; inside</td><td>匹配方式，`includes`表示包含即可，`startsWith`表示只匹配开头，`endsWith`表示只匹配结尾</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.strict</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td class="f-tac">outside  =&gt; inside</td><td>是否为严格模式。当为严格模式时，`value`属性必须为一个选项的值，否则为空。</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.open</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td class="f-tac">outside &lt;=&gt; inside</td><td>当前为展开/收起状态</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.direction</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;bottom-left&#39;</code></td><td class="f-tac">outside  =&gt; inside</td><td>展开方向</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.readonly</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td class="f-tac">outside  =&gt; inside</td><td>是否只读</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.disabled</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td class="f-tac">outside  =&gt; inside</td><td>是否禁用</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.visible</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>true</code></td><td class="f-tac">outside  =&gt; inside</td><td>是否显示</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.class</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td class="f-tac">outside  =&gt; inside</td><td>补充class</td></tr>
+            
+        
+    </tbody>
+</table>
+<div id="j-options"></div>
+
+
+    <h3 id="Methods">Methods</h3>
+    
+    
+    <h4>suggest.select(item)</h4>
+    <p>选择某一项</p>
+    <table>
+        <thead>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                <tr><td class="f-wsn"><code>item</code></td><td class="f-wsn">Item</td><td class="f-wsn"></td><td>选择项</td></tr>
+                
+            
+        </tbody>
+        <thead>
+            <tr><th width="25%">返回值</th><th width="25%">类型</th><th width="50%" colspan="2">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                <tr><td class="f-tac" colspan="4">无返回值</td></tr>
+            
+        </tbody>
+    </table>
+    
+
+<div id="j-methods"></div>
+
+
+<div id="j-staticMethods"></div>
+
+
+<div id="j-inheritedMethods"></div>
+
+
+    <h3 id="Events">Events</h3>
+    
+    
+    <h4>suggest.$on('change')</h4>
+    <p>文本框的值改变时触发</p>
+    <table>
+        <thead>
+            <tr><th width="33%">属性</th><th width="33%">类型</th><th width="33%">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                <tr><td class="f-wsn"><code>sender</code></td><td class="f-wsn">object</td><td class="f-wsn">事件发送对象</td></tr>
+                
+                <tr><td class="f-wsn"><code>value</code></td><td class="f-wsn">var</td><td class="f-wsn">改变后的值</td></tr>
+                
+            
+        </tbody>
+    </table>
+    
+    
+    <h4>suggest.$on('select')</h4>
+    <p>选择某一项时触发</p>
+    <table>
+        <thead>
+            <tr><th width="33%">属性</th><th width="33%">类型</th><th width="33%">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                <tr><td class="f-wsn"><code>sender</code></td><td class="f-wsn">object</td><td class="f-wsn">事件发送对象</td></tr>
+                
+                <tr><td class="f-wsn"><code>selected</code></td><td class="f-wsn">Item</td><td class="f-wsn">当前选择项</td></tr>
+                
+                <tr><td class="f-wsn"><code>value</code></td><td class="f-wsn">var</td><td class="f-wsn">当前选择值</td></tr>
+                
+            
+        </tbody>
+    </table>
+    
+    
+    <h4>suggest.$on('toggle')</h4>
+    <p>展开/收起时触发</p>
+    <table>
+        <thead>
+            <tr><th width="33%">属性</th><th width="33%">类型</th><th width="33%">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                <tr><td class="f-wsn"><code>sender</code></td><td class="f-wsn">object</td><td class="f-wsn">事件发送对象</td></tr>
+                
+                <tr><td class="f-wsn"><code>open</code></td><td class="f-wsn">boolean</td><td class="f-wsn">展开/收起状态</td></tr>
+                
+                <tr><td class="f-wsn"><code>direction</code></td><td class="f-wsn">string</td><td class="f-wsn">展开方向</td></tr>
+                
+            
+        </tbody>
+    </table>
+    
+
+<div id="j-events"></div>
+
+
+<div id="j-inheritedEvents"></div>
+
+    </article>
+</div>
+</div></div><div class="g-ft">
+    <footer class="m-footer">
+        <p><a href="https://regular-ui.github.io/v0.2/" class="footer_logo"><img src="https://regular-ui.github.io/v0.2/img/logo-v2.0-bg-48.png" /></p>
+        <p>
+            <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
+            <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
+            <a href="https://github.com/regular-ui/regular-ui/releases" target="_blank">ChangeLog</a> |
+            <a href="https://github.com/regular-ui/regular-ui/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a>
+        </p>
+        <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
+    </footer>
+</div>
+<script src="https://regular-ui.github.io/v0.2/vendor/polyfill.min.js"></script>
+<script src="https://regular-ui.github.io/v0.2/vendor/regular.min.js"></script>
+<script src="../js/index.js"></script>
+<script src="https://regular-ui.github.io/v0.2/js/helper.js"></script>
+<script>
+"use strict";
+
+var index = 0;
+(function (index) {
+    var template = "<suggest>\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>";
+    var component = new RGUI.Component({
+        template: template
+    });
+    component && component.$inject($$(".m-example")[index]);
+})(index++);
+(function (index) {
+    var template = "<suggest maxlength=\"6\" placeholder=\"输入时会自动提示\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>";
+    var component = new RGUI.Component({
+        template: template
+    });
+    component && component.$inject($$(".m-example")[index]);
+})(index++);
+(function (index) {
+    var template = "<suggest readonly placeholder=\"只读\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n</suggest>\n<suggest disabled placeholder=\"禁用\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n</suggest>\n<suggest placeholder=\"禁用某一项\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\" disabled>bread</item>\n</suggest>";
+    var component = new RGUI.Component({
+        template: template
+    });
+    component && component.$inject($$(".m-example")[index]);
+})(index++);
+(function (index) {
+    var template = "<suggest startAt=\"2\" placeholder=\"2字符后开始提示\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>";
+    var component = new RGUI.Component({
+        template: template
+    });
+    component && component.$inject($$(".m-example")[index]);
+})(index++);
+(function (index) {
+    var template = "<suggest matchType=\"includes\" placeholder=\"包括即可（默认）\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>\n<suggest matchType=\"startsWith\" placeholder=\"只匹配开头\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>\n<suggest matchType=\"endsWith\" placeholder=\"只匹配结尾\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>";
+    var component = new RGUI.Component({
+        template: template
+    });
+    component && component.$inject($$(".m-example")[index]);
+})(index++);
+(function (index) {
+    var template = "<suggest placeholder=\"非严格模式（默认）\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>\n<suggest strict placeholder=\"严格模式\">\n    <item value=\"abandon\">abandon</item>\n    <item value=\"about\">about</item>\n    <item value=\"absent\">absent</item>\n    <item value=\"bread\">bread</item>\n    <item value=\"break\">break</item>\n    <item value=\"brief\">brief</item>\n    <item value=\"calendar\">calendar</item>\n    <item value=\"cancel\">cancel</item>\n    <item value=\"column\">column</item>\n</suggest>";
+    var component = new RGUI.Component({
+        template: template
+    });
+    component && component.$inject($$(".m-example")[index]);
+})(index++);
+</script>
+</body>
+</html>
