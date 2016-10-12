@@ -1,0 +1,28 @@
+@import './core.mcss';
+
+// Component:       `u-suggest`
+// ========================================================================
+
+.u-suggest {
+    width: $field_width;
+
+    .m-listView {
+        max-height: 200px;
+    }
+}
+
+.u-suggest.u-overlay-top-left,
+.u-suggest.u-overlay-top-center,
+.u-suggest.u-overlay-top-right {
+    .overlay_bd {
+        margin-bottom: 2px;
+    }
+}
+
+.u-suggest.u-overlay-bottom-left,
+.u-suggest.u-overlay-bottom-center,
+.u-suggest.u-overlay-bottom-right {
+    .overlay_bd {
+        margin-top: 2px;
+    }
+}

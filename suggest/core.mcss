@@ -1,0 +1,13 @@
+// Component:       `u-suggest`
+// ========================================================================
+
+.u-suggest {
+    .overlay_bd {
+        width: 100%;
+    }
+
+    .m-listView {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
