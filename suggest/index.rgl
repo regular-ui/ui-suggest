@@ -1,6 +1,6 @@
 <overlay ref="overlay" class="u-suggest {class}" open={open} trigger="" direction={direction} readonly={readonly} disabled={disabled} visible={visible} on-toggle="toggle">
     <overlay.head>
-        <inputField value={value} state={state} size={size} tip={tip} rules={rules}
+        <inputField ref="inputField" value={value} state={state} size={size} tip={tip} rules={rules}
             name={name} type={type} placeholder={placeholder} maxlength={maxlength} autofocus={autofocus} readonly={readonly} disabled={disabled}
             on-focus={this._onFocusOrInput($event)} on-input={this._onFocusOrInput($event)} on-blur={this._onBlur($event)} />
     </overlay.head>

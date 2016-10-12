@@ -81,8 +81,8 @@ const Suggest = ListView.extend({
          * @property {Item} selected 当前选择项
          * @property {var} value 当前选择值
          */
-        this.supr(item);
         this.data.value = item.data.value;
+        this.supr(item);
         this.$refs.overlay.toggle(false);
     },
         /**
@@ -92,6 +92,23 @@ const Suggest = ListView.extend({
          * @property {string} direction 展开方向
          */
     /**
+     * @method filter(item, value) 根据输入值判断某一项是否要过滤
+     * @public
+     * @param  {Item} item 选择项
+     * @param  {string} value 输入值
+     * @return {void}
+     */
+    filter(item, value) {
+        const itemValue = item.data.value === undefined ? '' : item.data.value + '';
+        return itemValue[this.data.matchType](value);
+    },
+    /**
+     * @public
+     */
+    focus() {
+        this.$refs.InputField.focus();
+    },
+    /**
      * @private
      */
     _onFocusOrInput($event) {
@@ -100,7 +117,7 @@ const Suggest = ListView.extend({
 
         // 只在这种情况下才会展开，所以在这里处理哪些项显示/隐藏
         this.data._list.forEach((item) => {
-            item.data.visible = item.data.value[this.data.matchType](value);
+            item.data.visible = this.filter(item, value);
         });
 
         this.$refs.overlay.toggle(value.length >= this.data.startAt);
