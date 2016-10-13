@@ -1,11 +1,11 @@
 import { ListView } from 'rgui-ui-listview';
 import { Overlay } from 'rgui-ui-overlay';
-import { InputField } from 'rgui-ui-field';
+import { Field, InputField } from 'rgui-ui-field';
 import template from './index.rgl';
 
 /**
  * @class Suggest
- * @extend ListView
+ * @extend Field
  * @param {object}                  options.data                     =  绑定属性
  * @param {string=''}               options.data.value              <=> 文本框的值
  * @param {string=''}               options.data.type                => 文本框的类型
@@ -26,7 +26,7 @@ import template from './index.rgl';
  * @param {boolean=true}            options.data.visible             => 是否显示
  * @param {string=''}               options.data.class               => 补充class
  */
-const Suggest = ListView.extend({
+const Suggest = Field.extend({
     name: 'suggest',
     template,
     /**
@@ -35,9 +35,12 @@ const Suggest = ListView.extend({
      */
     config() {
         this.defaults({
-            // @inherited _list: [],
-            // @inherited _selected: undefined,
-            value: '',
+            _list: [],
+            _selected: undefined,
+            // @inherited value: '',
+            // @inherited state: '',
+            // @inherited tip: '',
+            // // @inherited rules: [],
             open: undefined,
             direction: 'bottom-left',
             placeholder: '',
@@ -106,7 +109,19 @@ const Suggest = ListView.extend({
      * @public
      */
     focus() {
-        this.$refs.InputField.focus();
+        this.$refs.inputField.focus();
+    },
+    /**
+     * @public
+     */
+    blur() {
+        this.$refs.inputField.blur();
+    },
+    /**
+     * @public
+     */
+    validate(trigger) {
+        this.$refs.inputField.validate(trigger);
     },
     /**
      * @private
