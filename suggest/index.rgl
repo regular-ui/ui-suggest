@@ -2,7 +2,10 @@
     <overlay.head>
         <inputField ref="inputField" value={value} state={state} size={size} tip={tip} rules={rules}
             name={name} type={type} placeholder={placeholder} maxlength={maxlength} autofocus={autofocus} readonly={readonly} disabled={disabled}
-            on-focus={this._onFocusOrInput($event)} on-input={this._onFocusOrInput($event)} on-blur={this._onBlur($event)} />
+            on-input={this._onFocusOrInput($event)}
+            on-focus={this._onFocusOrInput($event)}
+            on-blur={this._onBlur($event)}
+            on-validate={this._onValidate($event)} />
     </overlay.head>
     <overlay.body>
         <ul class="m-listView">

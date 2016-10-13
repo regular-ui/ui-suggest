@@ -85,7 +85,7 @@ const Suggest = Field.extend({
          * @property {var} value 当前选择值
          */
         this.data.value = item.data.value;
-        this.supr(item);
+        ListView.prototype.select.call(this, item);
         this.$refs.overlay.toggle(false);
     },
         /**
@@ -149,6 +149,12 @@ const Suggest = Field.extend({
             if (!this.data._selected)
                 this.data.value = '';
         });
+    },
+    /**
+     * @private
+     */
+    _onValidate($event) {
+        this.$emit('validate', Object.assign($event, { sender: this }));
     },
 });
 
