@@ -11,8 +11,8 @@
   "keywords": ["regular", "ui", "rgui", "suggest"],
   "tags": ["regular", "ui", "rgui", "suggest"],
   "dependencies": {
-    "rgui-ui-listview": "^0.2.0-alpha.1",
-    "rgui-ui-overlay": "^0.2.0-alpha.2",
+    "rgui-ui-listview": "^0.2.0",
+    "rgui-ui-overlay": "^0.2.0",
     "rgui-ui-field": "regular-ui/ui-field"
   },
   "peerDependencies": {

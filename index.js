@@ -1,3 +1,3 @@
-import Suggest from './suggest';
+import Suggest from './src/suggest';
 
 export { Suggest };
