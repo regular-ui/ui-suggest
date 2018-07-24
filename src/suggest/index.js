@@ -52,6 +52,7 @@ const Suggest = Field.extend({
             strict: false,
         });
         this.supr();
+        this.watch();
     },
     /**
      * @protected
@@ -142,13 +143,21 @@ const Suggest = Field.extend({
      */
     _onBlur($event) {
         setTimeout(() => {
-            if (!this.data.strict)
-                return;
+            const selected = this.data._list.find((item) => item.data.value === this.data.value);
+            if (this.data.strict && !selected) {
+                if (this.data._selected) {
+                    this.data.value = this.data._selected.value;
+                } else {
+                    this.data.value = '';
+                    this.data._selected = selected;
+                }
+            } else
+                this.data._selected = selected;
 
-            this.data._selected = this.data._list.find((item) => item.data.value === this.data.value);
-            if (!this.data._selected)
-                this.data.value = '';
-        });
+            setTimeout(() => {
+                this.$emit('blur', $event);
+            });
+        }, 200);
     },
     /**
      * @private
